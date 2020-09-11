@@ -10,6 +10,7 @@
 # $ sudo docker exec -it lighttpddocker_lighttpd_1 ash
 
 lighttpd:
+    image: ghcr.io/forinil/lighttpd:latest
     build: .
     ports:
         - "8001:80" # for testing purposes, (un)comment as required
