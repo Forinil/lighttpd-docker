@@ -10,6 +10,7 @@ Security, speed, compliance, and flexibility -- all of these describe [lighttpd]
  - Build
 	 - Build with Docker
 	 - Build with Docker Compose
+	 - Build with Docker Buildx
  - About
 
 ## Usage
@@ -45,6 +46,7 @@ Add the following lines in an existing or a new `docker-compose.yml` file:
 	    - <config-directory>:/etc/lighttpd
 	  ports:
 	    - "<http-port>:80"
+	  tty: true
 
 **Note** – The `- <config-directory>:…` line is optional, it can be used to override the default configuration files with your own.
 
@@ -55,7 +57,7 @@ Then start a lighttpd container with:
 
 ## Build
 
-First clone or download the [spujadas/lighttpd-docker](https://github.com/spujadas/lighttpd-docker) GitHub repository, open a shell in the newly created `lighttpd-docker` directory, then build the image and run a container using Docker or Docker Compose, as explained below.
+First clone or download the [spujadas/lighttpd-docker](https://github.com/spujadas/lighttpd-docker) GitHub repository, open a shell in the newly created `lighttpd-docker` directory, then build the image and run a container using Docker, Docker Compose, or Docker Buildx, as explained below.
 
 ### Build with Docker
 
@@ -68,6 +70,12 @@ This command will build the image:
 Build the image with this command:
 
 	$ sudo docker-compose build
+
+### Build with Docker Buildx
+
+Build the image with this command:
+
+	$ sudo buildx build .
 
 ## About
 
